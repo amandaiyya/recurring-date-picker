@@ -1,23 +1,23 @@
-"use client"
+"use client";
 
 import {createContext, useContext, useState} from "react";
 
-const RecurrenceContext = createContext()
+const RecurrenceContext = createContext();
 
 export function ReccurenceProvider({children}){
-    const [recurrenceType, setRecurrenceType] = useState('daily')
-    const [interval, setInterval] = useState(1)
-    const [weekDays, setWeekDays] = useState([])
-    const [monthlyPattern, setMonthlyPattern] = useState({ week: 1, day: "Monday"})
-    const [startDate, setStartDate] = useState("")
-    const [endDate, setEndDate] = useState("")
-    const [previewDates, setPreviewDates] = useState([])
+    const [recurrenceType, setRecurrenceType] = useState("");
+    const [intervalValue, setIntervalValue] = useState(1);
+    const [weekDays, setWeekDays] = useState([]);
+    const [monthlyPattern, setMonthlyPattern] = useState({ week: 1, day: "Monday"});
+    const [startDate, setStartDate] = useState("");
+    const [endDate, setEndDate] = useState("");
+    const [previewDates, setPreviewDates] = useState([]);
 
     const value = {
         recurrenceType,
         setRecurrenceType,
-        interval,
-        setInterval,
+        intervalValue,
+        setIntervalValue,
         weekDays,
         setWeekDays,
         monthlyPattern,
@@ -28,7 +28,7 @@ export function ReccurenceProvider({children}){
         setEndDate,
         previewDates,
         setPreviewDates
-    }
+    };
 
     return (
         <RecurrenceContext.Provider value={value}>
@@ -37,4 +37,4 @@ export function ReccurenceProvider({children}){
     )
 }
 
-export const useRecurrence = () => useContext(RecurrenceContext)
+export const useRecurrence = () => useContext(RecurrenceContext);
