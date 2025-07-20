@@ -27,7 +27,7 @@ export default function RecurringOptionSelector(){
     if(!mounted) return null
 
     return (
-        <div className='mb-4 p-4 hover:bg-gray-200'>
+        <div className='mb-4'>
             <select
               value={recurrenceType}
               onChange={(e) => setRecurrenceType(e.target.value)}
