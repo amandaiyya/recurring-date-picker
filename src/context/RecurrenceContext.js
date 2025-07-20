@@ -4,7 +4,7 @@ import {createContext, useContext, useState} from "react";
 
 const RecurrenceContext = createContext();
 
-export function ReccurenceProvider({children}){
+export function RecurrenceProvider({children}){
     const [recurrenceType, setRecurrenceType] = useState("");
     const [intervalValue, setIntervalValue] = useState(1);
     const [weekDays, setWeekDays] = useState([]);

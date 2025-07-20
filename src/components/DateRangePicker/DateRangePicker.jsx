@@ -2,6 +2,16 @@
 
 import { useRecurrence } from "../../context/RecurrenceContext";
 
+/**
+ * DateRangePicker Component
+ * 
+ * This component lets users choose a start and end date for a recurring event.
+ * 
+ * - Both inputs are HTML5 `<input type="date">`
+ * - Values are controlled by context (startDate, endDate)
+ * - "End Date" is optional (help text provided)
+ */
+
 export default function DateRangePicker(){
     const { startDate, setStartDate, endDate, setEndDate } = useRecurrence()
 

@@ -3,6 +3,18 @@
 import { useEffect, useState } from 'react';
 import { useRecurrence } from '../../context/RecurrenceContext'
 
+/**
+ * RecurringOptionSelector Component
+ * 
+ * This component renders a dropdown select menu to choose a recurring option
+ * like Daily, Weekly, Monthly, or Yearly.
+ * 
+ * It uses context (useRecurrence) to get and update the recurrence type globally.
+ * 
+ * The component waits until it's mounted on the client before rendering
+ * (useful for SSR in Next.js).
+ */
+
 export default function RecurringOptionSelector(){
     const {recurrenceType, setRecurrenceType} = useRecurrence();
 

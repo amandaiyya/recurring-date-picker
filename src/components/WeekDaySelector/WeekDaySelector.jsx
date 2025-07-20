@@ -4,17 +4,28 @@ import { useRecurrence } from "../../context/RecurrenceContext";
 
 const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
+/**
+ * WeekDaySelector Component
+ * 
+ * This component allows users to select one or more weekdays (Mon-Sun).
+ * It only renders when the `recurrenceType` is set to `'weekly'`.
+ * 
+ * Selected days are managed using the `weekDays` state from RecurrenceContext.
+ */
+
 export default function WeekDaySelector(){
     const { recurrenceType, weekDays, setWeekDays} = useRecurrence()
 
+    // Toggle day selection
     const toggleDay = (day) => {
         setWeekDays((prev) => 
             prev.includes(day)
-              ? prev.filter((d) => d !== day)
-              : [...prev, day]
+              ? prev.filter((d) => d !== day) // remove day
+              : [...prev, day]  // add day
         )
     }
 
+    // Only render if "weekly" is selected
     if(recurrenceType !== 'weekly') return null;
 
     return (
