@@ -74,6 +74,15 @@ export default function MiniCalendarPreview(){
         return days;
     }
 
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    },[])
+    
+    if(!mounted) return null
+
+
     return (
         <div className="mt-6 p-4 border rounded shadow-sm">
             {/* Header with month & navigation */}
@@ -82,7 +91,7 @@ export default function MiniCalendarPreview(){
                  onClick={prevMonth}
                  className="text-sm px-2 py-1 border rounded hover:bg-gray-100"
                 >
-                   ←
+                   &larr;
                 </button>
                 <h3 className="text-md font-semibold">
                     {format(currentMonth, 'MMMM yyyy')}
@@ -91,7 +100,7 @@ export default function MiniCalendarPreview(){
                  onClick={nextMonth}
                  className="text-sm px-2 py-1 border rounded hover:bg-gray-100"
                 >
-                   →
+                   &rarr;
                 </button>
             </div>
 
