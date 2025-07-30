@@ -6,6 +6,12 @@ This component is customizable, modular, and includes a visual calendar preview 
 
 ---
 
+## 📦 Deployment
+This application is deployed and live at:  
+🔗 [https://recurring-date-picker-one.vercel.app](https://recurring-date-picker-one.vercel.app)
+
+---
+
 ## ✅ Features
 
 ### 🔁 Recurrence Options
